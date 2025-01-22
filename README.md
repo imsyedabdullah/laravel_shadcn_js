@@ -2,6 +2,8 @@
 
 A basic starter template for building web applications with **Laravel** and **Shadcn.js**. This repository serves as a foundation to kickstart your project with Laravel as the backend and Shadcn.js for the frontend.
 
+![App Screenshot](./public/dashboard-screenshot.png)
+
 ## Features
 
 - Laravel framework pre-configured.
