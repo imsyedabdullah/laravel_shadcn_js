@@ -1,13 +1,13 @@
-# Laravel Shadcn.js Starter
+# Laravel Shadcn UI (React JS) Starter
 
-A basic starter template for building web applications with **Laravel** and **Shadcn.js**. This repository serves as a foundation to kickstart your project with Laravel as the backend and Shadcn.js for the frontend.
+A basic starter template for building web applications with **Laravel** and **Shadcn UI (React JS)**. This repository serves as a foundation to kickstart your project with Laravel as the backend and Shadcn UI (React JS) for the frontend.
 
 ![App Screenshot](./public/dashboard-screenshot.png)
 
 ## Features
 
 - Laravel framework pre-configured.
-- Shadcn.js integrated for modern JavaScript-based UI development.
+- Shadcn UI (React JS) integrated for modern JavaScript-based UI development.
 - Ready-to-use setup with minimal configuration required.
 
 
