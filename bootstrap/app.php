@@ -17,7 +17,8 @@ return Application::configure(basePath: dirname(__DIR__))
             \Illuminate\Http\Middleware\AddLinkHeadersForPreloadedAssets::class,
         ]);
 
-        //
+		// $middleware->throttleApi();
+		$middleware->statefulApi();
     })
     ->withExceptions(function (Exceptions $exceptions) {
         //

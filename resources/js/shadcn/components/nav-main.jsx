@@ -17,6 +17,7 @@ import {
   SidebarMenuSubButton,
   SidebarMenuSubItem,
 } from "@/shadcn/components/ui/sidebar"
+import IconComponent from "@/Components/IconComponent"
 
 export function NavMain({
   items
@@ -34,7 +35,7 @@ export function NavMain({
             <SidebarMenuItem>
               <CollapsibleTrigger asChild>
                 <SidebarMenuButton tooltip={item.title}>
-                  {item.icon && <item.icon />}
+                  {item.icon && <IconComponent iconName={item.icon} />}
                   <span>{item.title}</span>
                   <ChevronRight
                     className="ml-auto transition-transform duration-200 group-data-[state=open]/collapsible:rotate-90" />

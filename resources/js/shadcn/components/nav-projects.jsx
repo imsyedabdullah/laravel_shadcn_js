@@ -16,6 +16,7 @@ import {
   SidebarMenuItem,
   useSidebar,
 } from "@/shadcn/components/ui/sidebar"
+import IconComponent from "@/Components/IconComponent"
 
 export function NavProjects({
   projects
@@ -30,7 +31,7 @@ export function NavProjects({
           <SidebarMenuItem key={item.name}>
             <SidebarMenuButton asChild>
               <a href={item.url}>
-                <item.icon />
+                <IconComponent iconName={item.icon} />
                 <span>{item.name}</span>
               </a>
             </SidebarMenuButton>

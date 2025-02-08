@@ -1,10 +1,8 @@
-import React from 'react';
-import { Link } from '@inertiajs/react';
-import { AppSidebar } from "@/shadcn/components/app-sidebar"
+import React, { useState, useEffect } from 'react';
+import { AppSidebarWrap } from "@/shadcn/components/app-sidebar"
 import {
 	Breadcrumb,
 	BreadcrumbItem,
-	BreadcrumbLink,
 	BreadcrumbList,
 	BreadcrumbPage,
 	BreadcrumbPageLight,
@@ -16,12 +14,30 @@ import {
 	SidebarProvider,
 	SidebarTrigger,
 } from "@/shadcn/components/ui/sidebar"
+import { useAppContext } from "@/Context/AppContext";
+import { Link, usePage } from '@inertiajs/react';
 
 export default function AuthenticatedLayout({ children, breadcrumbs }) {
+	const user = usePage().props.auth.user;
+	const { navMenu, setNavMenu } = useAppContext();
+
+	useEffect(() => {
+		async function fetchNavMenu(){
+			axios('/api/nav-menu').then(res => {
+				if(res.status === 200 && res.data){
+					setNavMenu(res.data);
+				}
+			});
+		}
+		
+		if(Object.keys(navMenu).length === 0){
+			fetchNavMenu();
+		}
+	}, [navMenu]);
 
 	return (
 		<SidebarProvider>
-			<AppSidebar />
+			<AppSidebarWrap user={user} navMenu={navMenu} />
 			<SidebarInset>
 				<header className="flex h-16 shrink-0 items-center gap-2 transition-[width,height] ease-linear group-has-[[data-collapsible=icon]]/sidebar-wrapper:h-12">
 					<div className="flex items-center gap-2 px-4">
